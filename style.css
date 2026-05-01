@@ -1,0 +1,955 @@
+/* ==========================================================================
+   CSS Değişkenleri (Renk Paleti ve Genel Ayarlar)
+   ========================================================================== */
+:root {
+    /* Güven veren, sakinleştirici pastel tonlar */
+    --primary-color: #a78bfa;     /* Pastel Mor */
+    --primary-hover: #8b5cf6;
+    --primary-light: #f5f3ff;
+    
+    --secondary-color: #34d399;   /* Pastel Yeşil */
+    --secondary-hover: #10b981;
+    
+    --text-main: #334155;         /* Koyu gri okunaklı metin */
+    --text-muted: #64748b;        /* Daha açık gri */
+    --text-dark: #0f172a;         /* Başlıklar için en koyu gri */
+    
+    --bg-main: #ffffff;           /* Temiz beyaz arkaplan */
+    --bg-light: #f8fafc;
+    --bg-support: #f0fdf4;        /* Destek bölümü için çok açık pastel yeşil tonu */
+    
+    --white: #ffffff;
+    
+    /* Gölgelendirmeler - Daha yumuşak ve geniş */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    
+    --transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Genel Sıfırlamalar ve Ayarlar
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   Ortak Sınıflar
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px; 
+}
+
+.section-padding {
+    padding: 120px 0; 
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 80px;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.highlight {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Buton Tasarımları
+   ========================================================================== */
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================================================
+   1. Header
+   ========================================================================== */
+.header {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 24px 0; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    transition: var(--transition);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.school-name {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 40px; 
+}
+
+.nav-menu a {
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   2. Hero Section
+   ========================================================================== */
+.hero {
+    min-height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--primary-light) 100%);
+    padding: 100px 0;
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   3. Sergi Alanı (Hikayeler Galerisi)
+   ========================================================================== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 50px; 
+}
+
+.story-card {
+    background-color: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-visual-wrapper {
+    height: 240px;
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-light);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.story-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 30px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-size: 1.4rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.card-content p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.read-more {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    align-self: flex-start;
+}
+
+/* ==========================================================================
+   Tam Ekran Hikaye Görünümü (Full Page Layout)
+   ========================================================================== */
+.full-page-story {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-main);
+    z-index: 9999;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.full-page-story.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.story-page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--white);
+    min-height: 100vh;
+    box-shadow: var(--shadow-lg);
+}
+
+.story-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: var(--bg-light);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.back-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 50px;
+}
+
+/* Modern Audio Player Area */
+.audio-player-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.tts-btn {
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+}
+
+.tts-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.tts-btn.playing {
+    background-color: #ef4444; /* Kırmızı (Durdur) */
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.audio-player-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.audio-progress-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--white);
+    padding: 8px 15px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.audio-time {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    min-width: 35px;
+    text-align: center;
+}
+
+.audio-progress-bg {
+    width: 150px;
+    height: 6px;
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.audio-progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    width: 0%;
+    border-radius: 10px;
+    transition: width 0.1s linear;
+}
+
+.story-page-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.story-image-wrapper {
+    width: 100%;
+    background-color: #0f172a; /* Görsel çevresi için koyu bir fon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.story-image-wrapper img {
+    max-width: 100%;
+    max-height: 70vh; /* Ekranın %70'inden fazla yer kaplamasın */
+    object-fit: contain; /* Görseli kesmeden orantılı sığdır */
+}
+
+.story-text-content {
+    padding: 50px 60px;
+    background-color: var(--white);
+}
+
+.story-main-title {
+    color: var(--text-dark);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.story-section {
+    margin-bottom: 35px;
+}
+
+.story-section h4 {
+    color: var(--text-dark);
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.story-section p {
+    color: var(--text-main);
+    font-size: 1.25rem;
+    line-height: 2; /* Daha rahat okuma için satır aralığı */
+}
+
+.highlight-section {
+    background-color: var(--primary-light);
+    padding: 30px;
+    border-radius: 16px;
+    border-left: 6px solid var(--primary-color);
+}
+
+.story-message {
+    margin-top: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-hover);
+    font-style: italic;
+    text-align: center;
+    padding: 30px;
+    background-color: var(--bg-support);
+    border-radius: 16px;
+    border: 1px solid var(--secondary-color);
+}
+
+/* ==========================================================================
+   Anket ve Sonuçlar (Survey Section)
+   ========================================================================== */
+.survey {
+    background-color: var(--white);
+}
+
+.survey-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.survey-form-container, .survey-results-container {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.survey-title {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Form Styles */
+.survey-form .form-group {
+    margin-bottom: 25px;
+}
+
+.survey-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-group label {
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.survey-form input[type="text"],
+.survey-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: var(--transition);
+    background-color: var(--bg-light);
+}
+
+.survey-form input[type="text"]:focus,
+.survey-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.2);
+    background-color: var(--white);
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Results Styles */
+.stats-cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    flex: 1;
+    background-color: var(--bg-light);
+    padding: 20px 10px;
+    border-radius: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.stat-percentage {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.slogan-highlight {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-md);
+}
+
+.findings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.finding-item {
+    display: flex;
+    gap: 15px;
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: 16px;
+    align-items: flex-start;
+}
+
+.finding-icon {
+    font-size: 2rem;
+    background-color: var(--white);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-sm);
+}
+
+.finding-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+.finding-text strong {
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Survey Result Image */
+.result-image-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.04);
+}
+
+.result-image-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.result-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-hint {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.result-image-wrapper:hover .image-hint {
+    opacity: 1;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(15, 23, 42, 0.9); /* var(--text-dark) with opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.show {
+    display: block;
+    opacity: 1;
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.9); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: var(--secondary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. Proje Hakkında (About Section)
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+}
+
+.about-card {
+    background-color: var(--white);
+    padding: 60px 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.about-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: var(--primary-light);
+}
+
+.about-card h3 {
+    font-size: 1.6rem;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   5. Destek ve İletişim
+   ========================================================================== */
+.support {
+    background-color: var(--bg-support);
+    text-align: center;
+}
+
+.support-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+.support-content h2 {
+    font-size: 2.8rem;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.support-content p {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    margin-bottom: 50px;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.footer p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   Responsive Tasarım
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2.4rem;
+    }
+
+    .gallery-grid {
+        gap: 30px;
+    }
+    
+    .survey-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .story-page-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .story-image-wrapper img {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .section-padding {
+        padding: 80px 0;
+    }
+
+    /* Mobil Menü */
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: var(--shadow-md);
+        padding: 30px 0;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .story-text-content {
+        padding: 30px 20px;
+    }
+
+    .story-main-title {
+        font-size: 1.8rem;
+    }
+
+    .story-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+    }
+    
+    .story-message {
+        font-size: 1.25rem;
+        padding: 20px;
+    }
+    
+    .tts-btn {
+        width: 100%;
+    }
+
+    .stats-cards {
+        flex-direction: column;
+    }
+
+    .survey-form-container, .survey-results-container {
+        padding: 25px 20px;
+    }
+}

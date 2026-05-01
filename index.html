@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekranın Ardındaki Sesler - Güzel Konak İmam Hatip Ortaokulu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. Header (Üst Menü) -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <span class="logo-title">Ekranın Ardındaki Sesler</span>
+                    <span class="school-name">Güzel Konak İmam Hatip Ortaokulu</span>
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="#exhibition">Sergi</a></li>
+                    <li><a href="#survey">Anket & Sonuçlar</a></li>
+                    <li><a href="#about">Proje Hakkında</a></li>
+                    <li><a href="#support">Destek Al</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-icon" id="mobileMenuIcon">
+                <span>&#9776;</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section (Karşılama Alanı) -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Güzel Konak'ın Ardındaki Seslere <span class="highlight">Kulak Ver</span></h1>
+                <p>Sayılar değil, yaşanmışlıklar... Okulumuzdaki gerçek siber zorbalık hikayelerinden oluşan dijital farkındalık sergimize hoş geldin.</p>
+                <a href="#exhibition" class="btn btn-primary">Sergiyi Gez</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Sergi Alanı (Hikayeler Galerisi) -->
+    <section id="exhibition" class="exhibition section-padding">
+        <div class="container">
+            <h2 class="section-title">Hikayeler Galerisi</h2>
+            <p class="section-subtitle">Aşağıdaki kartlara tıklayarak öğrencilerimizin yaşadığı siber zorbalık olaylarını ve dönüm noktalarını inceleyebilirsiniz.</p>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Hikaye Kartları JavaScript ile buraya dinamik eklenecek -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tam Ekran Hikaye Görünümü (Full Page Story) -->
+    <div class="full-page-story" id="storyPage" style="display: none;">
+        <div class="story-page-container">
+            <div class="story-page-header">
+                <button class="btn btn-secondary back-btn" id="closeStoryBtn">&larr; Ana Sayfaya Dön</button>
+                <div class="audio-player-wrapper">
+                    <audio id="storyAudio" preload="metadata"></audio>
+                    <div class="audio-player-container">
+                        <button class="tts-btn" id="ttsBtn">
+                            <span class="tts-icon">▶️</span> <span id="ttsBtnText">Sesli Okuma</span>
+                        </button>
+                        <div class="audio-progress-container">
+                            <span id="audioCurrentTime" class="audio-time">0:00</span>
+                            <div class="audio-progress-bg" id="audioProgressBg">
+                                <div class="audio-progress-bar" id="audioProgressBar"></div>
+                            </div>
+                            <span id="audioDuration" class="audio-time">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="story-page-content" id="storyPageContent">
+                <!-- İçerik JavaScript ile dinamik olarak eklenecek -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Anket ve Sonuçlar -->
+    <section id="survey" class="survey section-padding">
+        <div class="container">
+            <h2 class="section-title">Anket ve Sonuçlar</h2>
+            <p class="section-subtitle">Siber zorbalık konusundaki deneyimlerinizi paylaşın ve güncel araştırma verilerimizi inceleyin.</p>
+            
+            <div class="survey-grid">
+                <!-- Anket Formu -->
+                <div class="survey-form-container">
+                    <h3 class="survey-title">Deneyim Anketi</h3>
+                    <form class="survey-form">
+                        <div class="form-group">
+                            <label>Daha önce siber zorbalığa maruz kaldınız mı veya şahit oldunuz mu?</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="experienced" value="yes"> Evet</label>
+                                <label><input type="radio" name="experienced" value="no"> Hayır</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDesc">Yaşadığınız veya şahit olduğunuz bir olayı kısaca anlatır mısınız?</label>
+                            <textarea id="eventDesc" rows="4" placeholder="Deneyiminizi buraya yazabilirsiniz..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="sloganSugg">Siber zorbalıkla mücadele için bir slogan önerin:</label>
+                            <input type="text" id="sloganSugg" placeholder="Örn: Klavye başında değil, kalbinle düşün!">
+                        </div>
+                        <button type="button" class="btn btn-primary btn-submit">Gönder</button>
+                    </form>
+                </div>
+                
+                <!-- İstatistikler ve Sonuçlar -->
+                <div class="survey-results-container">
+                    <h3 class="survey-title">Araştırma Sonuçları</h3>
+                    
+                    <div class="result-image-wrapper">
+                        <img src="anketsonuc.png" alt="Anket Sonuçları Görseli" class="result-image" id="resultImage">
+                        <div class="image-hint">🔍 Büyütmek için görsele tıklayın</div>
+                    </div>
+                    
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <span class="stat-percentage highlight">%65</span>
+                            <span class="stat-label">Maruz Kalanlar</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-percentage" style="color: var(--secondary-color)">%25</span>
+                            <span class="stat-label">Şahit Olanlar</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-percentage" style="color: var(--text-muted)">%10</span>
+                            <span class="stat-label">Hiç Yaşamayanlar</span>
+                        </div>
+                    </div>
+
+                    <div class="slogan-highlight">
+                        "Klavye başında değil, kalbinle düşün!"
+                    </div>
+
+                    <div class="findings-list">
+                        <div class="finding-item">
+                            <div class="finding-icon">🎮</div>
+                            <div class="finding-text">
+                                <strong>E-spor ve Oyunlar</strong> E-spor ve çevrimiçi oyunlarda kız öğrencilere yönelik cinsiyetçi söylemler ve zorbalık oranları dikkat çekici seviyededir.
+                            </div>
+                        </div>
+                        <div class="finding-item">
+                            <div class="finding-icon">⚖️</div>
+                            <div class="finding-text">
+                                <strong>Cinsiyet Eşitsizliği</strong> Siber zorbalık olaylarının temelinde cinsiyet eşitsizliğine dayalı önyargıların yattığı gözlemlenmiştir.
+                            </div>
+                        </div>
+                        <div class="finding-item">
+                            <div class="finding-icon">🧠</div>
+                            <div class="finding-text">
+                                <strong>Psikolojik Etkiler</strong> Zorbalığa uğrayan veya şahit olan öğrencilerde yüksek düzeyde özgüven kaybı ve içe kapanma gibi psikolojik etkiler rapor edilmiştir.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Proje Hakkında (Metodoloji) -->
+    <section id="about" class="about section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Proje Hakkında</h2>
+            <p class="section-subtitle">TÜBİTAK Projesi Metodolojimiz</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="icon-circle"></div>
+                    <h3>Amacımız</h3>
+                    <p>Öğrenciler arasında empati kurmak ve siber zorbalık konusunda farkındalık yaratmak.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-circle"></div>
+                    <h3>Nasıl Yaptık?</h3>
+                    <p>Ortaokul öğrencilerimizin anonim hikayelerini derledik ve bu dijital sergide bir araya getirdik.</p>
+                </div>
+                <div class="about-card">
+                    <div class="icon-circle"></div>
+                    <h3>Sonuç</h3>
+                    <p>Daha güvenli, empatik ve bilinçli bir dijital okul iklimi oluşturmak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Destek ve İletişim -->
+    <section id="support" class="support section-padding">
+        <div class="container support-container">
+            <div class="support-content">
+                <h2>Yalnız Değilsin. Destek Alabilirsin!</h2>
+                <p>Eğer sen veya bir arkadaşın siber zorbalığa maruz kalıyorsa, Güzel Konak İmam Hatip Ortaokulu rehberlik servisimizle iletişime geçmekten çekinme.</p>
+                <a href="#" class="btn btn-secondary">Rehberlik Servisine Ulaş</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Ekranın Ardındaki Sesler - Güzel Konak İmam Hatip Ortaokulu TÜBİTAK Projesi.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <!-- JavaScript Dosyası -->
+    <script src="script.js"></script>
+</body>
+</html>
